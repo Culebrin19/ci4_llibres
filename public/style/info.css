@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+
+}
+
+.book-info{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    /* text-align: center; */
+    height: 25rem;
+}
+
+img{
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 200px;
+    float: left;
+    margin: 0 20px 20px 0;
+}

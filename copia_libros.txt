@@ -1,0 +1,117 @@
+generes-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Versión del servidor:         10.4.32-MariaDB - mariadb.org binary distribution
+-- SO del servidor:              Win64
+-- HeidiSQL Versión:             12.8.0.6908
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Volcando estructura de base de datos para llibres
+DROP DATABASE IF EXISTS `llibres`;
+CREATE DATABASE IF NOT EXISTS `llibres` /*!40100 DEFAULT CHARACTER SET utf32 COLLATE utf32_general_ci */;
+USE `llibres`;
+
+-- Volcando estructura para tabla llibres.generes
+DROP TABLE IF EXISTS `generes`;
+CREATE TABLE IF NOT EXISTS `generes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla llibres.generes: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla llibres.llibres
+DROP TABLE IF EXISTS `llibres`;
+CREATE TABLE IF NOT EXISTS `llibres` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titol` varchar(255) NOT NULL,
+  `autor` varchar(255) NOT NULL,
+  `ISBN` varchar(20) DEFAULT NULL,
+  `estat` tinyint(1) NOT NULL,
+  `prioritat` tinyint(1) NOT NULL,
+  `data_inici` date DEFAULT NULL,
+  `data_fi` date DEFAULT NULL,
+  `comprat` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla llibres.llibres: ~38 rows (aproximadamente)
+INSERT INTO `llibres` (`id`, `titol`, `autor`, `ISBN`, `estat`, `prioritat`, `data_inici`, `data_fi`, `comprat`, `created_at`, `updated_at`, `deleted_at`) VALUES
+	(1, 'Todas mis heridas', 'Kathleen Glasgow', '9788490436516', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:14:41', '2025-05-24 19:14:41', NULL),
+	(2, 'Nosotros en la luna', 'Alice Kellen', '9788408223290', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:15:13', '2025-05-24 19:15:13', NULL),
+	(3, 'Te espero en el fin del mundo', 'Andrea Longarela', '9788408270737', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:16:17', '2025-05-24 19:16:17', NULL),
+	(4, 'Un beso en paris', 'Stephanie Perkins', '9788424668372', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:16:44', '2025-05-24 19:16:44', NULL),
+	(5, 'A dos metros de ti', 'Rachael Lippincott', '9788417605025', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:17:10', '2025-05-24 19:17:10', NULL),
+	(6, 'Prohibido creer en historias de amor', 'Javier Ruescas', '9788490437797', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:17:44', '2025-05-24 19:17:44', NULL),
+	(7, 'Hasta que nos quedemos sin estrellas', 'Inma Rubiales', '9788408252962', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:18:09', '2025-05-24 19:18:09', NULL),
+	(8, 'El arte de ser nosotros', 'Inma Rubiales', '9788408267928', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:18:40', '2025-05-24 19:18:40', NULL),
+	(9, 'El tiempo que tuvimos', 'Cherry Chic', '9788419357434', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:19:07', '2025-05-24 19:19:07', NULL),
+	(10, 'Cuando seamos sueños de papel', 'Pol Ibáñez', '9788408283379', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:20:05', '2025-05-24 19:20:05', NULL),
+	(11, 'Las luces de febrero', 'Joana Marcús', '9788419421142', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:20:40', '2025-05-24 19:20:40', NULL),
+	(12, 'Todo este tiempo', 'Rachael Lippincott', '9788417605698', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:21:01', '2025-05-24 19:21:01', NULL),
+	(13, 'Todo lo que nunca fuimos', 'Alice Kellen', '9788408298625', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:21:26', '2025-05-24 19:21:26', NULL),
+	(14, 'Experimento de amor en Nueva York', 'Elena Armas', '9788412622447', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:22:43', '2025-05-24 19:22:43', NULL),
+	(15, 'Todo lo que somos juntos', 'Alice Kellen', '9788408298632', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:23:18', '2025-05-24 19:23:18', NULL),
+	(16, 'El dia que dejó de nevar en alaska', 'Alice Kellen', '9788417421564', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:23:43', '2025-05-24 19:23:43', NULL),
+	(17, 'El chico de arriba', 'MARIE JENN', '9788419241894', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:25:21', '2025-05-24 19:25:21', NULL),
+	(18, 'El mapa de los anhelos', 'Alice Kellen', '9788408255956', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:25:44', '2025-05-24 19:25:44', NULL),
+	(19, 'Todos los lugares que mantuvimos en secreto', 'Inma Rubiales', '9788408297666', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:26:05', '2025-05-24 19:26:05', NULL),
+	(20, 'Kiss & Cry', 'Andrea Tomé', '9788424666002', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:26:24', '2025-05-24 19:26:24', NULL),
+	(21, 'Las estrellas en tus ojos', 'JENN BENNETT', '9788492918751', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:28:42', '2025-05-24 19:28:42', NULL),
+	(22, 'Hija de la tierra', 'Andrea Longarela', '9788419507402', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:29:10', '2025-05-24 19:29:10', NULL),
+	(23, 'La tormenta en un verano infinito', 'RAQUEL ATTARD', '9788418883712', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:29:33', '2025-05-24 19:29:33', NULL),
+	(24, 'Prohibido enamorarse ', 'Elle Kennedy', '9788418509681', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:30:05', '2025-05-24 19:30:05', NULL),
+	(25, 'Objetivo tu y yo', 'Elle Kennedy', '9788418509704', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:30:29', '2025-05-24 19:30:29', NULL),
+	(26, 'Hijos de la magia', 'Andrea Longarela', '9788419688101', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:31:06', '2025-05-24 19:31:06', NULL),
+	(27, 'Hijas del nuevo mundo', 'Andrea Longarela', '9788419688286', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:32:05', '2025-05-24 19:32:05', NULL),
+	(28, 'Antes de diciembre', 'Joana Marcús', '9788418949135', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:32:43', '2025-05-24 19:32:43', NULL),
+	(29, 'Despues de diciembre ', 'Joana Marcús', '9788418798917', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:33:16', '2025-05-24 19:33:16', NULL),
+	(30, 'Tú y yo, invencibles', 'Alice Kellen', '9788408237822', 1, 0, '2025-05-24', '2025-05-24', 0, '2025-05-24 19:33:44', '2025-05-24 19:33:44', NULL),
+	(34, 'Novia', 'Ali Hazelwood', '9788419988126', 1, 0, '2025-05-26', '2025-05-28', 0, '2025-05-28 14:52:41', '2025-05-28 21:02:52', NULL),
+	(35, 'El año en el que (casi) fuimos', 'Maria Zarate', '9788408282730', 1, 0, '2025-05-29', '2025-06-02', 0, '2025-06-02 18:07:05', '2025-06-02 18:07:05', NULL),
+	(36, 'Baile de luciernagas', 'Elena Castillo', '9788417361136', 1, 0, '2025-06-02', '2025-06-14', 0, '2025-06-03 18:18:46', '2025-06-14 19:25:43', NULL),
+	(37, 'Otra vez tú', 'Alice Kellen', '978-84-08-24603-9\r\n', 1, 0, '2025-06-14', '2025-06-16', 0, '2025-08-11 14:26:27', '2025-08-11 14:26:27', NULL),
+	(38, 'Tal vez tú', 'Alice Kellen', '978-84-08-30809-6\r\n', 1, 0, '2025-06-18', '2025-07-06', 0, '2025-08-11 14:27:28', '2025-08-11 14:27:28', NULL),
+	(39, 'El efecto bola de nieve', 'CLARA HERAUT', '9788419467270', 1, 0, '2025-07-09', '2025-07-12', 0, '2025-08-11 14:28:57', '2025-08-11 14:28:57', NULL),
+	(40, 'Quedará el amor', 'Alice Kellen', '9788408305255', 1, 0, '2025-07-19', '2025-08-02', 0, '2025-08-11 14:29:51', '2025-08-11 14:29:51', NULL),
+	(41, 'El color de las cosas invisibles', 'Andrea Longarela', '9788408305996', 1, 0, '2025-08-02', '2025-08-10', 0, '2025-08-11 14:30:37', '2025-08-11 14:30:37', NULL);
+
+-- Volcando estructura para tabla llibres.migrations
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `version` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `group` varchar(255) NOT NULL,
+  `namespace` varchar(255) NOT NULL,
+  `time` int(11) NOT NULL,
+  `batch` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla llibres.migrations: ~2 rows (aproximadamente)
+INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
+	(1, '2025-05-18-133434', 'App\\Database\\Migrations\\GeneresMigration', 'default', 'App', 1748114047, 1),
+	(2, '2025-05-18-133436', 'App\\Database\\Migrations\\LlibresMigration', 'default', 'App', 1748114047, 1);
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
